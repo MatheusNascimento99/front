@@ -1,0 +1,35 @@
+.menu{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    color: red;
+    background-color: white;
+    align-items: center;
+    padding: 12px;
+}
+
+.menu button{
+    background-color: transparent;
+    color: red;
+    border: none;
+}
+
+.menu_lateral{
+    background-color: white;
+    color: red;
+    height: 100vh;
+    width: 200px;
+    position: fixed;
+    top:0;
+    left: 0;
+    padding: 12px;
+    
+}
+
+.menu_lateral .fechar{
+    width: 100%;
+    cursor: pointer;
+    text-align: right;
+    color: red;
+
+}
