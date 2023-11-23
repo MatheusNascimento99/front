@@ -1,26 +1,27 @@
+'use client'
+import { useEffect, useState } from "react"
+import axios from "axios"
 import Noticia from "@/componentes/Noticia/noticia"
 
-const noticias = [
-    {
-        id: 1,
-        titulo:'Noticia 1',
-        img:'http://via.placeholder.com/150',
-        texto:'Texto da <b>noticia</b>'
-    },{
-        id: 2,
-        titulo:'Noticia 2',
-        img:'http://via.placeholder.com/150',
-        texto:'Texto da <b>noticia</b>'
-    },{
-        id: 3,
-        titulo:'Noticia 3',
-        img:'http://via.placeholder.com/150',
-        texto:'Texto da <b>noticia</b>'
-    }
 
-]
 
 const HomePage = () => {
+    const [noticias, setNoticias] = useState([]);
+
+
+    const getNoticias = async () => {
+        try {
+            const result = await axios.get('http://localhost:8080/noticias')
+            setNoticias(result.data);
+        } catch (error) {
+            alert(error.response.data.message);
+        }
+    }
+
+    useEffect(() => {
+        getNoticias()
+    }, []);
+
     return (
         <div>
             <h1>Home</h1>
