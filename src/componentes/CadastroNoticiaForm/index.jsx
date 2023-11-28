@@ -20,7 +20,7 @@ const [categoria, setCategoria] = useState('')
             }
             const result = await axios.post('http://localhost:8080/noticias', formulario)
             alert('Nova notícia cadastrada!')
-            router.push('/home')
+            return router.push('/home')
         } catch (error) {
             alert(error.data.message)
         }

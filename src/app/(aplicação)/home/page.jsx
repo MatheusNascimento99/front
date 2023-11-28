@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from "react"
 import axios from "axios"
-import Noticia from "@/componentes/Noticia/noticia"
+import Noticia from "@/componentes/Noticia"
 
 
 
